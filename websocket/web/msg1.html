@@ -4,7 +4,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
-<title>haohao</title>
+<title>xiao7</title>
 <meta name="description" content="andy-Lei" />
 <meta name="author" content="andy-Lei" />
 <meta name="robots" content="noindex, nofollow" />
@@ -29,8 +29,8 @@ ul li {
 <script src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
 var ws = null;
-var username = "haohao";
-var toUser = "xiao7";
+var username = "xiao7";
+var toUser = "haohao";
 function log(text) {
 	console.log(text);
 }
@@ -66,7 +66,7 @@ function startServer() {
 		}else{
 			var showData=event.data.split(",");
 			log(showData[0]+"说:"+showData[2]);
-			if(showData[0]=='haohao'){
+			if(showData[0]=='xiao7'){
 				$("#content").append("<div><ul class='ul_talk reply'><li class='tbox' ><div><span class='head' style=''><img src='img/0.jpg'></span></div><div><span class='arrow'><svg><path d='M0 10 L20 19 L21 12 L20 14 L0 20 Z' stroke-width='1' stroke='#7EBE2A' fill='#7EBE2A'></path></svg></span></div><div><article class='content'  style='border-radius:5px;box-shadow:  -1px 4px 2px -3px #999999; '>"+showData[2]+"</article></div></li></ul></div>");  
 			}else{
 				$("#content").append("<div><ul class='ul_talk' style='padding:0; margin:0'><li class='tbox' ><div><span class='head'><img src='img/1.jpg'></span></div><div><span class='arrow'><svg><path d='M50 0 L5 19 L4 20 L5 21 L50 40 Z' stroke-width='1' stroke='#FFFFFF' fill='#FFFFFF'></path></svg></span></div><div><article class='content' style='border-radius:5px;box-shadow: -1px 4px 2px -3px #999999; margin-bottom: 0px;'>"+showData[2]+"</article></div></li></ul></div>");
