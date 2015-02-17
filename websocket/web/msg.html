@@ -53,7 +53,7 @@ String.prototype.startWith=function(s){
 function startServer() {
 	console.log(navigator.userAgent);
 	//document.getElementById("input-pj-text").value=navigator.userAgent;
-	var url ="ws://182.254.155.153/websocket/websocket/test";
+	var url ="ws://192.168.0.102:8080/websocket/hao/msg";
 	if ('WebSocket' in window) {
 		ws = new WebSocket(url);
 	} else if ('MozWebSocket' in window) {

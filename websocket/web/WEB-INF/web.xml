@@ -29,12 +29,12 @@
 
    
     <servlet>
-      <servlet-name>wsSnake</servlet-name>
+      <servlet-name>haomsg</servlet-name>
       <servlet-class>com.hao.HelloWorldWebSocketServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-      <servlet-name>wsSnake</servlet-name>
-      <url-pattern>/websocket/test</url-pattern>
+      <servlet-name>haomsg</servlet-name>
+      <url-pattern>/hao/msg</url-pattern>
     </servlet-mapping>
     
    
