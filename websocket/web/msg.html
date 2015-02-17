@@ -28,8 +28,15 @@ ul li {
 </style>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
 var ws = null;
-var username = "haohao";
+var username =getQueryString("uid");// "haohao";
+console.log("uid:"+username);
 var toUser = "xiao7";
 function log(text) {
 	console.log(text);
@@ -66,7 +73,7 @@ function startServer() {
 		}else{
 			var showData=event.data.split(",");
 			log(showData[0]+"说:"+showData[2]);
-			if(showData[0]=='haohao'){
+			if(showData[0]==username){
 				$("#content").append("<div><ul class='ul_talk reply'><li class='tbox' ><div><span class='head' style=''><img src='img/0.jpg'></span></div><div><span class='arrow'><svg><path d='M0 10 L20 19 L21 12 L20 14 L0 20 Z' stroke-width='1' stroke='#7EBE2A' fill='#7EBE2A'></path></svg></span></div><div><article class='content'  style='border-radius:5px;box-shadow:  -1px 4px 2px -3px #999999; '>"+showData[2]+"</article></div></li></ul></div>");  
 			}else{
 				$("#content").append("<div><ul class='ul_talk' style='padding:0; margin:0'><li class='tbox' ><div><span class='head'><img src='img/1.jpg'></span></div><div><span class='arrow'><svg><path d='M50 0 L5 19 L4 20 L5 21 L50 40 Z' stroke-width='1' stroke='#FFFFFF' fill='#FFFFFF'></path></svg></span></div><div><article class='content' style='border-radius:5px;box-shadow: -1px 4px 2px -3px #999999; margin-bottom: 0px;'>"+showData[2]+"</article></div></li></ul></div>");
@@ -94,12 +101,12 @@ function stopconn() {
 <body onload="startServer()" style=" background:#E6E6E6; margin:0; padding:0; padding-bottom:55px; ">
 <div  id="page-container" style=" margin:0px; padding:0px; background:none; padding-top:0px; padding-bottom:0px">
 <div id="content" class="containertop">
-	<div><ul class='ul_talk' style="padding:0; margin:0"><li class='tbox' ><div><span class='head'><img src='img/1.jpg'></span></div><div><span class='arrow'><svg><path d='M50 0 L5 19 L4 20 L5 21 L50 40 Z' stroke-width='1' stroke='#FFFFFF' fill='#FFFFFF'></path></svg></span></div><div>
+<!-- 	<div><ul class='ul_talk' style="padding:0; margin:0"><li class='tbox' ><div><span class='head'><img src='img/1.jpg'></span></div><div><span class='arrow'><svg><path d='M50 0 L5 19 L4 20 L5 21 L50 40 Z' stroke-width='1' stroke='#FFFFFF' fill='#FFFFFF'></path></svg></span></div><div>
 		<article class='content' style='border-radius:5px;box-shadow: -1px 4px 2px -3px #999999; margin-bottom: 0px;'>事情是一样的嘛</article></div></li></ul>
 	</div>
 	<div><ul class='ul_talk reply'><li class='tbox' ><div><span class='head' style=''><img src='img/0.jpg'></span></div><div><span class='arrow'><svg><path d='M0 10 L20 19 L21 12 L20 14 L0 20 Z' stroke-width='1' stroke='#7EBE2A' fill='#7EBE2A'></path></svg></span></div><div>
 		<article class='content'  style='border-radius:5px;box-shadow:  -1px 4px 2px -3px #999999; '>我觉得还可以！当世界变的不同的时候，我们议案让你选择放弃了</article></div></li></ul>
-	</div>
+	</div> -->
 </div>
 </div>
 
